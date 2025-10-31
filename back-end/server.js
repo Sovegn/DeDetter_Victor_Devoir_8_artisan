@@ -1,4 +1,4 @@
-console.log('🚀 Démarrage du serveur Trouve ton artisan...');
+console.log('Démarrage du serveur Trouve ton artisan...');
 
 const express = require('express');
 const ENV = require('./config');
@@ -127,7 +127,7 @@ app.use((err, req, res, next) => {
   const details = err.details || null;
 
   if (process.env.NODE_ENV !== 'production') {
-    console.error('❌ Erreur serveur:', {
+    console.error(' Erreur serveur:', {
       status,
       message,
       details,
@@ -151,36 +151,30 @@ app.use((err, req, res, next) => {
 const startServer = async () => {
   try {
     await db.authenticate();
-    console.log('✅ Connexion à la base de données confirmée !');
+    console.log(' Connexion à la base de données confirmée !');
 
     await db.sync({ force: false });
-    console.log('✅ Base de données synchronisée avec succès !');
+    console.log(' Base de données synchronisée avec succès !');
 
     app.listen(PORT, () => {
-      console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
-      console.log(`📖 Documentation API disponible sur http://localhost:${PORT}`);
-      console.log(`💚 Santé de l'API : http://localhost:${PORT}/health`);
-      console.log('🎯 Endpoints principaux :');
-      console.log(`   • Catégories : http://localhost:${PORT}/api/categorie/all`);
-      console.log(`   • Artisans : http://localhost:${PORT}/api/artisan/all`);
-      console.log(`   • Artisans du mois : http://localhost:${PORT}/api/artisan/top`);
-      console.log(`   • Contact : POST http://localhost:${PORT}/api/contact/send`);
+      console.log(` Serveur démarré sur http://localhost:${PORT}`);
+      console.log(` Documentation API disponible sur http://localhost:${PORT}`);
     });
   } catch (error) {
-    console.error(`❌ Erreur lors du démarrage :`, error.message);
+    console.error(` Erreur lors du démarrage :`, error.message);
     process.exit(1);
   }
 };
 
 // Gestion propre de l'arrêt du serveur
 process.on('SIGTERM', async () => {
-  console.log('🔄 Arrêt du serveur en cours...');
+  console.log(' Arrêt du serveur en cours...');
   try {
     await db.close();
-    console.log('✅ Connexion à la base de données fermée.');
+    console.log(' Connexion à la base de données fermée.');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Erreur lors de la fermeture:', error);
+    console.error(' Erreur lors de la fermeture:', error);
     process.exit(1);
   }
 });
@@ -189,10 +183,10 @@ process.on('SIGINT', async () => {
   console.log('\n🔄 Arrêt du serveur (Ctrl+C)...');
   try {
     await db.close();
-    console.log('✅ Connexion à la base de données fermée.');
+    console.log(' Connexion à la base de données fermée.');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Erreur lors de la fermeture:', error);
+    console.error(' Erreur lors de la fermeture:', error);
     process.exit(1);
   }
 });
