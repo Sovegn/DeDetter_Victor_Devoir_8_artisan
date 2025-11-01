@@ -1,0 +1,90 @@
+
+.not-found-page {
+  padding: 4rem 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 575px) {
+  .not-found-page {
+    padding: 3rem 0;
+  }
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.not-found-image {
+  margin-bottom: 2rem;
+}
+
+.not-found-image .error-icon {
+  width: 150px;
+  height: 150px;
+  color: var(--medium-gray);
+}
+
+@media (max-width: 575px) {
+  .not-found-image .error-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.not-found-text h1 {
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 575px) {
+  .not-found-text h1 {
+    font-size: 2rem;
+  }
+}
+
+.not-found-text p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 575px) {
+  .not-found-text p {
+    font-size: 1rem;
+  }
+}
+
+.not-found-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .not-found-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+.not-found-actions .btn-primary-custom,
+.not-found-actions .btn-secondary-custom {
+  min-width: 200px;
+  padding: 0.75rem 1.5rem;
+}
+
+@media (max-width: 575px) {
+  .not-found-actions .btn-primary-custom,
+  .not-found-actions .btn-secondary-custom {
+    width: 100%;
+    max-width: 280px;
+  }
+}
