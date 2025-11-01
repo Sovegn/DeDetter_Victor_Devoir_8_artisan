@@ -1,0 +1,111 @@
+
+.artisan-card {
+  height: 100%;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+
+.artisan-card:hover {
+  box-shadow: var(--box-shadow);
+  transform: translateY(-4px);
+}
+
+.artisan-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+.artisan-card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--medium-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.artisan-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.artisan-card-image .image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--medium-gray);
+}
+
+.artisan-card-image .image-placeholder svg {
+  width: 40px;
+  height: 40px;
+}
+
+
+.artisan-card-body {
+  padding: 1.5rem;
+}
+
+.artisan-name {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.artisan-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating-text {
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+.artisan-specialite {
+  color: var(--primary-blue);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  margin-bottom: 0.5rem;
+}
+
+.artisan-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-small);
+}
+
+.artisan-location svg {
+  flex-shrink: 0;
+}
+
+
+@media (max-width: 575px) {
+  .artisan-card-image {
+    height: 180px;
+  }
+  
+  .artisan-card-body {
+    padding: 1rem;
+  }
+  
+  .artisan-name {
+    font-size: 1.125rem;
+  }
+}
