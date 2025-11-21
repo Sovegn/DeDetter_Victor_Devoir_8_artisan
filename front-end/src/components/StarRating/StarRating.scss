@@ -1,0 +1,62 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 575px) {
+    gap: 0.25rem;
+  }
+}
+
+.stars-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+
+  @media (max-width: 575px) {
+    gap: 0.0625rem;
+  }
+}
+
+.star {
+  color: var(--border-light);
+
+  &.star-full {
+    color: var(--rating-star);
+  }
+
+  &.star-half {
+    color: var(--rating-star);
+    position: relative;
+
+    &::before {
+      content: '★';
+      position: absolute;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &.star-small {
+    font-size: 0.875rem;
+  }
+
+  &.star-medium {
+    font-size: 1rem;
+
+    @media (max-width: 575px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &.star-large {
+    font-size: 1.25rem;
+  }
+}
+
+.rating-value {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  font-weight: var(--font-weight-medium);
+}

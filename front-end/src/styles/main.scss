@@ -1,7 +1,7 @@
-@import 'variables.css';
-@import 'mixins.css';
+@import 'variables';
+@import 'mixins';
 
-
+// Reset & Base Styles
 * {
   box-sizing: border-box;
 }
@@ -22,7 +22,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-
+// Headings
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -38,28 +38,29 @@ h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
 
+// Paragraph
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-
+// Links
 a {
   color: var(--primary-blue);
   text-decoration: none;
   transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary-blue);
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-a:hover {
-  color: var(--secondary-blue);
-  text-decoration: underline;
-}
-
-a:focus {
-  outline: none;
-}
-
-
+// Screen Reader Only
 .sr-only {
   position: absolute;
   width: 1px;
@@ -72,7 +73,7 @@ a:focus {
   border: 0;
 }
 
-
+// Primary Button
 .btn-primary-custom {
   display: inline-flex;
   align-items: center;
@@ -88,25 +89,25 @@ a:focus {
   background-color: var(--primary-blue);
   color: var(--white);
   transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
 }
 
-.btn-primary-custom:hover:not(:disabled) {
-  background-color: var(--secondary-blue);
-  border-color: var(--secondary-blue);
-  text-decoration: none;
-  color: var(--white);
-}
-
-.btn-primary-custom:focus {
-  outline: none;
-}
-
-.btn-primary-custom:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
-
+// Secondary Button
 .btn-secondary-custom {
   display: inline-flex;
   align-items: center;
@@ -122,24 +123,24 @@ a:focus {
   background-color: transparent;
   color: var(--primary-blue);
   transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
 }
 
-.btn-secondary-custom:hover:not(:disabled) {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  text-decoration: none;
-}
-
-.btn-secondary-custom:focus {
-  outline: none;
-}
-
-.btn-secondary-custom:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
-
+// Layout
 .main-container {
   min-height: 100vh;
   display: flex;
@@ -152,29 +153,27 @@ a:focus {
   padding-bottom: 2rem;
 }
 
-
+// Container
 .container-custom {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
-}
 
-@media (min-width: 768px) {
-  .container-custom {
+  @media (min-width: 768px) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-
+// Section Background
 .section-bg {
   background-color: var(--light-gray);
   padding: 3rem 0;
 }
 
-
+// Card
 .card-custom {
   background: var(--white);
   border: 1px solid var(--medium-gray);
@@ -183,7 +182,7 @@ a:focus {
   overflow: hidden;
 }
 
-
+// Form Control
 .form-control-custom {
   display: block;
   width: 100%;
@@ -195,18 +194,18 @@ a:focus {
   border: 1px solid var(--medium-gray);
   border-radius: var(--border-radius);
   transition: all 0.2s ease;
+
+  &:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
 }
 
-.form-control-custom:focus {
-  border-color: var(--primary-blue);
-  outline: none;
-}
-
-.form-control-custom::placeholder {
-  color: var(--text-muted);
-}
-
-
+// Display Utilities
 @media (max-width: 575px) {
   .d-mobile-none {
     display: none !important;
@@ -219,7 +218,7 @@ a:focus {
   }
 }
 
-
+// Skip Link
 .skip-link {
   position: absolute;
   top: -40px;
@@ -230,9 +229,9 @@ a:focus {
   text-decoration: none;
   z-index: 9999;
   border-radius: var(--border-radius);
-}
 
-.skip-link:focus {
-  top: 6px;
-  outline: none;
+  &:focus {
+    top: 6px;
+    outline: none;
+  }
 }

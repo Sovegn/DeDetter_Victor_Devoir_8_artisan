@@ -1,5 +1,5 @@
-@import './styles/variables.css';
-@import './styles/mixins.css';
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
 
 .App {
   

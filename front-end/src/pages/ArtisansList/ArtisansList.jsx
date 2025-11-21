@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { artisanService, categorieService } from '../../services/api';
 import ArtisanCard from '../../components/ArtisanCard/ArtisanCard';
-import './ArtisansList.css';
+import './ArtisansList.scss';
 
 const ArtisansList = () => {
   const [searchParams] = useSearchParams();

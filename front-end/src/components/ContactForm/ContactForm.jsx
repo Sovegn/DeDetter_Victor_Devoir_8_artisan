@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { contactService } from '../../services/api';
-import './ContactForm.css';
+import './ContactForm.scss';
 
 const ContactForm = ({ artisan }) => {
   const [formData, setFormData] = useState({

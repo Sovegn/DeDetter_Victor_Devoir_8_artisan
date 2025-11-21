@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { categorieService } from '../../services/api';
 import SearchBar from '../SearchBar/SearchBar';
-import './Header.css';
+import './Header.scss';
 
 const Header = () => {
   const [categories, setCategories] = useState([]);

@@ -1,13 +1,11 @@
-
 .artisan-card {
   height: 100%;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
 
-
-.artisan-card:hover {
-  box-shadow: var(--box-shadow);
-  transform: translateY(-4px);
+  &:hover {
+    box-shadow: var(--box-shadow);
+    transform: translateY(-4px);
+  }
 }
 
 .artisan-card-link {
@@ -15,7 +13,6 @@
   color: inherit;
   display: block;
 }
-
 
 .artisan-card-image {
   position: relative;
@@ -27,32 +24,38 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @media (max-width: 575px) {
+    height: 180px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--medium-gray);
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
-
-.artisan-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-.artisan-card-image .image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: var(--medium-gray);
-}
-
-.artisan-card-image .image-placeholder svg {
-  width: 40px;
-  height: 40px;
-}
-
 
 .artisan-card-body {
   padding: 1.5rem;
+
+  @media (max-width: 575px) {
+    padding: 1rem;
+  }
 }
 
 .artisan-name {
@@ -61,6 +64,10 @@
   color: var(--text-color);
   margin-bottom: 0.75rem;
   line-height: 1.3;
+
+  @media (max-width: 575px) {
+    font-size: 1.125rem;
+  }
 }
 
 .artisan-rating {
@@ -89,23 +96,8 @@
   gap: 0.5rem;
   color: var(--text-muted);
   font-size: var(--font-size-small);
-}
 
-.artisan-location svg {
-  flex-shrink: 0;
-}
-
-
-@media (max-width: 575px) {
-  .artisan-card-image {
-    height: 180px;
-  }
-  
-  .artisan-card-body {
-    padding: 1rem;
-  }
-  
-  .artisan-name {
-    font-size: 1.125rem;
+  svg {
+    flex-shrink: 0;
   }
 }

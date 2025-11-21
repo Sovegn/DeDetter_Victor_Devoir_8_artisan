@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SearchBar.css';
+import './SearchBar.scss';
 
 const SearchBar = ({ placeholder = "Rechercher un artisan...", className = "" }) => {
   const [searchQuery, setSearchQuery] = useState('');

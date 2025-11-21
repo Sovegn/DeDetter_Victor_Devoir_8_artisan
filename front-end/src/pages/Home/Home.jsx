@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { artisanService } from '../../services/api';
 import ArtisanCard from '../../components/ArtisanCard/ArtisanCard';
-import './Home.css';
+import './Home.scss';
 
 const Home = () => {
   const [artisansDuMois, setArtisansDuMois] = useState([]);

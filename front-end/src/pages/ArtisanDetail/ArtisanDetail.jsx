@@ -3,7 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { artisanService } from '../../services/api';
 import StarRating from '../../components/StarRating/StarRating';
 import ContactForm from '../../components/ContactForm/ContactForm';
-import './ArtisanDetail.css';
+import './ArtisanDetail.scss';
 
 const ArtisanDetail = () => {
   const { id } = useParams();

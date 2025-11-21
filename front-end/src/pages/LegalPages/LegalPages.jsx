@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './LegalPages.css';
+import './LegalPages.scss';
 
 const LegalPages = () => {
   const { page } = useParams();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../StarRating/StarRating';
-import './ArtisanCard.css';
+import './ArtisanCard.scss';
 
 const ArtisanCard = ({ artisan, className = "" }) => {
   if (!artisan) return null;
