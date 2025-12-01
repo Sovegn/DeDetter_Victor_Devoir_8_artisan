@@ -1,11 +1,11 @@
 const { Sequelize } = require('sequelize');
 const ENV = require('./index');
 
-console.log(' Initialisation de la connexion à MySQL...');
+console.log('🔌 Initialisation de la connexion MySQL...');
 
 const db = new Sequelize(ENV.DATABASE, ENV.USER, ENV.PASSWORD, {
   host: ENV.HOST,
-  dialect: ENV.DIALECT,
+  dialect: 'mysql',
   port: ENV.PORT_DATABASE,
   logging: false,
   timezone: '+01:00',
@@ -19,11 +19,11 @@ const db = new Sequelize(ENV.DATABASE, ENV.USER, ENV.PASSWORD, {
 
 const connection = async () => {
   try {
-    console.log('Tentative de connexion à la base de données...');
+    console.log('🔍 Tentative de connexion MySQL...');
     await db.authenticate();
-    console.log(' Connexion réussie à MySQL.');
+    console.log('✅ Connexion MySQL réussie.');
   } catch (error) {
-    console.error(`Erreur de connexion : `, error.message);
+    console.error('❌ Erreur connexion MySQL :', error.message);
     process.exit(1);
   }
 };
