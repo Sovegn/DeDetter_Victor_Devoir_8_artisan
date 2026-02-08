@@ -23,9 +23,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Configuration CORS sécurisée
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://trouve-ton-artisan.auvergnerhonealpes.fr']
-    : ['http://localhost:3000', 'http://localhost:3001'],
+  origin: true,           // ← TEMPORAIRE : autorise toutes les origines pour faciliter les tests
   credentials: true,
   optionsSuccessStatus: 200
 }));
@@ -71,15 +69,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Route de santé de l'API
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'OK',
-    message: 'API Trouve ton artisan fonctionnelle',
-    timestamp: new Date().toISOString(),
-    version: '1.0.0'
-  });
-});
 
 // Route d'accueil de l'API
 app.get('/', (req, res) => {
@@ -180,7 +169,7 @@ process.on('SIGTERM', async () => {
 });
 
 process.on('SIGINT', async () => {
-  console.log('\n🔄 Arrêt du serveur (Ctrl+C)...');
+  console.log('\n Arrêt du serveur (Ctrl+C)...');
   try {
     await db.close();
     console.log(' Connexion à la base de données fermée.');
